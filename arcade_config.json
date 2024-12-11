@@ -1,11 +1,11 @@
 {
 
-"port":"22188/arcade",
+"port":"8444",
 
-"host":"localhost",
+"host":"goldwavecasino.com",
 "prefix":"https://",
 
-"host_ws":"localhost",
+"host_ws":"goldwavecasino.com",
 "prefix_ws":"wss://",
 
 "ssl":true,

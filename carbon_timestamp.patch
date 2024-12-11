@@ -1,0 +1,11 @@
+--- vendor/nesbot/carbon/src/Carbon/Traits/Timestamp.php	
++++ vendor/nesbot/carbon/src/Carbon/Traits/Timestamp.php	
+@@ -24,6 +24,7 @@
+      *
+      * @return static
+      */
++    #[\ReturnTypeWillChange]
+     public static function createFromTimestamp($timestamp, $tz = null)
+     {
+         return static::createFromTimestampUTC($timestamp)->setTimezone($tz);
+     } 

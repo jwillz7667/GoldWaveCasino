@@ -1,0 +1,43 @@
+# Laravel
+/casino/vendor/
+/casino/node_modules/
+/casino/public/storage
+/casino/public/hot
+/casino/storage/*.key
+/casino/.env
+/casino/.env.backup
+/casino/.phpunit.result.cache
+/casino/Homestead.json
+/casino/Homestead.yaml
+/casino/npm-debug.log
+/casino/yarn-error.log
+
+# Node.js
+/PTwebsocket/node_modules/
+/PTwebsocket/.env
+/PTwebsocket/npm-debug.log
+/PTwebsocket/yarn-error.log
+
+# SSL Certificates
+/PTwebsocket/ssl/*.key
+/PTwebsocket/ssl/*.crt
+/PTwebsocket/ssl/*.pem
+
+# IDE and OS files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+/casino/storage/logs/
+/PTwebsocket/logs/
+
+# Cache files
+/casino/bootstrap/cache/
+/casino/storage/framework/cache/
+/casino/storage/framework/sessions/
+/casino/storage/framework/views/ 

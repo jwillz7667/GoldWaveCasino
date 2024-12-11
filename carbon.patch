@@ -1,0 +1,121 @@
+diff --git a/vendor/nesbot/carbon/src/Carbon/Traits/Timestamp.php b/vendor/nesbot/carbon/src/Carbon/Traits/Timestamp.php
+index 1234567..89abcde 100644
+--- a/vendor/nesbot/carbon/src/Carbon/Traits/Timestamp.php
++++ b/vendor/nesbot/carbon/src/Carbon/Traits/Timestamp.php
+@@ -24,6 +24,7 @@ trait Timestamp
+      *
+      * @return static
+      */
++    #[\ReturnTypeWillChange]
+     public static function createFromTimestamp($timestamp, $tz = null)
+     {
+         return static::createFromTimestampUTC($timestamp)->setTimezone($tz);
+     }
+diff --git a/vendor/nesbot/carbon/src/Carbon/Traits/Date.php b/vendor/nesbot/carbon/src/Carbon/Traits/Date.php
+index 1234567..89abcde 100644
+--- a/vendor/nesbot/carbon/src/Carbon/Traits/Date.php
++++ b/vendor/nesbot/carbon/src/Carbon/Traits/Date.php
+@@ -24,6 +24,7 @@ trait Date
+      *
+      * @return int
+      */
++    #[\ReturnTypeWillChange]
+     public function getDaysFromStartOfWeek(?int $weekStartsAt = null): int
+     {
+         return $this->dayOfWeek;
+     }
+@@ -34,6 +35,7 @@ trait Date
+      *
+      * @return self
+      */
++    #[\ReturnTypeWillChange]
+     public function setDaysFromStartOfWeek(?int $weekStartsAt = null): self
+     {
+         $this->setDate($this->year, $this->month, $this->day);
+         return $this;
+     }
+@@ -44,6 +46,7 @@ trait Date
+      *
+      * @return int
+      */
++    #[\ReturnTypeWillChange]
+     public function utcOffset(?int $minuteOffset = null): int
+     {
+         if ($minuteOffset !== null) {
+             $this->setTimezone(static::createFromTimestamp(0)->setTimezone($this->timezone)->getOffset() / 60);
+         }
+         return (int) ($this->getOffset() / 60);
+     }
+diff --git a/vendor/nesbot/carbon/src/Carbon/Traits/Localization.php b/vendor/nesbot/carbon/src/Carbon/Traits/Localization.php
+index 1234567..89abcde 100644
+--- a/vendor/nesbot/carbon/src/Carbon/Traits/Localization.php
++++ b/vendor/nesbot/carbon/src/Carbon/Traits/Localization.php
+@@ -24,6 +24,7 @@ trait Localization
+      *
+      * @return string
+      */
++    #[\ReturnTypeWillChange]
+     public function locale(?string $locale = null): string
+     {
+         if ($locale !== null) {
+             $this->setLocale($locale);
+         }
+         return $this->getLocale();
+     }
+diff --git a/vendor/nesbot/carbon/src/Carbon/Traits/Test.php b/vendor/nesbot/carbon/src/Carbon/Traits/Test.php
+index 1234567..89abcde 100644
+--- a/vendor/nesbot/carbon/src/Carbon/Traits/Test.php
++++ b/vendor/nesbot/carbon/src/Carbon/Traits/Test.php
+@@ -24,6 +24,7 @@ trait Test
+      *
+      * @return bool
+      */
++    #[\ReturnTypeWillChange]
+     public function setDefaultTimezone(?\DateTimeZone $date = null): bool
+     {
+         if ($date !== null) {
+             $this->setTimezone($date);
+         }
+         return true;
+     }
+diff --git a/vendor/nesbot/carbon/src/Carbon/CarbonTimeZone.php b/vendor/nesbot/carbon/src/Carbon/CarbonTimeZone.php
+index 1234567..89abcde 100644
+--- a/vendor/nesbot/carbon/src/Carbon/CarbonTimeZone.php
++++ b/vendor/nesbot/carbon/src/Carbon/CarbonTimeZone.php
+@@ -24,6 +24,7 @@ class CarbonTimeZone extends \DateTimeZone
+      *
+      * @return string
+      */
++    #[\ReturnTypeWillChange]
+     public function toOffsetName(?\DateTimeInterface $date = null): string
+     {
+         return $this->getName($date);
+     }
+@@ -34,6 +35,7 @@ class CarbonTimeZone extends \DateTimeZone
+      *
+      * @return self
+      */
++    #[\ReturnTypeWillChange]
+     public function toOffsetTimeZone(?\DateTimeInterface $date = null): self
+     {
+         return new static($this->getName($date));
+     }
+@@ -44,6 +46,7 @@ class CarbonTimeZone extends \DateTimeZone
+      *
+      * @return string
+      */
++    #[\ReturnTypeWillChange]
+     public function toRegionName(?\DateTimeInterface $date = null): string
+     {
+         return $this->getName($date);
+     }
+@@ -54,6 +57,7 @@ class CarbonTimeZone extends \DateTimeZone
+      *
+      * @return self
+      */
++    #[\ReturnTypeWillChange]
+     public function toRegionTimeZone(?\DateTimeInterface $date = null): self
+     {
+         return new static($this->getName($date));
+     }
+</rewritten_file> 
