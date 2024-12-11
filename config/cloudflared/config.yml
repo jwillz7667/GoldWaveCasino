@@ -1,0 +1,12 @@
+tunnel: goldwave-new
+credentials-file: /Users/willz/.cloudflared/a4420b74-1573-4c82-ad0c-ba9ade3be7ef.json
+ingress:
+  - hostname: goldwavecasino.com
+    service: http://127.0.0.1:80
+  - hostname: ws.goldwavecasino.com
+    service: ws://127.0.0.1:8443
+    originRequest:
+      noTLSVerify: true
+  - hostname: arcade.goldwavecasino.com
+    service: http://127.0.0.1:8444
+  - service: http_status:404
