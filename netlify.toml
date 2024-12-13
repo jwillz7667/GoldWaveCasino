@@ -1,0 +1,39 @@
+[build]
+  base = "casino/"
+  publish = "public/"
+  command = "npm run build"
+
+[build.environment]
+  PHP_VERSION = "8.4.1"
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.php"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "user"]}
+
+[[redirects]]
+  from = "/slots/*"
+  to = "http://127.0.0.1:8443/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/arcade/*"
+  to = "http://127.0.0.1:8444/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS, PUT, DELETE"
+    Access-Control-Allow-Headers = "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization"
+    Content-Security-Policy = "default-src * data: 'unsafe-inline' 'unsafe-eval'; script-src * data: 'unsafe-inline' 'unsafe-eval'; connect-src * data: 'unsafe-inline'; img-src * data: 'unsafe-inline'; style-src * data: 'unsafe-inline';"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "origin" 
