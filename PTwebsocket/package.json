@@ -5,9 +5,17 @@
   "main": "Server.js",
   "scripts": {
     "start": "pm2 start ecosystem.config.js",
-    "stop": "pm2 stop all"
+    "stop": "pm2 stop all",
+    "dev": "nodemon Server.js",
+    "slots": "nodemon Slots.js",
+    "arcade": "nodemon Arcade.js"
   },
   "dependencies": {
-    "ws": "^8.2.3"
+    "ws": "^8.2.3",
+    "dotenv": "^16.3.1",
+    "pm2": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 } 

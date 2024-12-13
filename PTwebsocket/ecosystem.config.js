@@ -6,7 +6,10 @@ module.exports = {
       watch: true,
       env: {
         NODE_ENV: 'production'
-      }
+      },
+      error_file: './logs/server-error.log',
+      out_file: './logs/server-out.log',
+      time: true
     },
     {
       name: 'casino-slots',
@@ -14,7 +17,10 @@ module.exports = {
       watch: true,
       env: {
         NODE_ENV: 'production'
-      }
+      },
+      error_file: './logs/slots-error.log',
+      out_file: './logs/slots-out.log',
+      time: true
     },
     {
       name: 'casino-arcade',
@@ -22,7 +28,10 @@ module.exports = {
       watch: true,
       env: {
         NODE_ENV: 'production'
-      }
+      },
+      error_file: './logs/arcade-error.log',
+      out_file: './logs/arcade-out.log',
+      time: true
     }
   ]
 }; 

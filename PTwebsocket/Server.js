@@ -1,12 +1,12 @@
+require('dotenv').config();
 const WebSocket = require('ws');
 const fs = require('fs');
 const https = require('https');
-const config = require('./socket_config2.json');
 
 // SSL Configuration
 const ssl_options = {
-    cert: fs.readFileSync('./ssl/crt.crt'),
-    key: fs.readFileSync('./ssl/key.key')
+    cert: fs.readFileSync(process.env.SSL_CERT_PATH),
+    key: fs.readFileSync(process.env.SSL_KEY_PATH)
 };
 
 // Create HTTPS server
@@ -97,7 +97,7 @@ function handleGameAction(ws, data) {
 }
 
 // Start the server
-const port = parseInt(config.port);
+const port = parseInt(process.env.MAIN_PORT);
 server.listen(port, () => {
     console.log(`Server running on port ${port}`);
 }); 
